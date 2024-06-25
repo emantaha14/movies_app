@@ -16,7 +16,7 @@ class ApiServices {
             "Accept": "application/json",
             "Content-Type": "null",
             "x-rapidapi-ua": "RapidAPI-Playground",
-            "x-rapidapi-key": "28fca14b07msh738c9dc0c519d6fp172942jsn7ac66e87ce7e",
+            "x-rapidapi-key": "b7d2281f9bmsh9696947784985c6p139017jsn4828b344613d",
             "x-rapidapi-host": "imdb-top-100-movies.p.rapidapi.com",
             "specificMethodHeaders": "[object Object]",
           }),

@@ -12,3 +12,4 @@ String mapFailureToMessage(Failure failure) {
       return failure.toString();
   }
 }
+bool isDark = false;

@@ -25,6 +25,7 @@ class MovieRemoteDataSourceImpl implements MovieRemoteDataSource {
           .toList();
       return movieResponses;
     } else {
+      print('nooooooooooooooooooooo responsssssssssssss');
       throw ServerException();
     }
   }

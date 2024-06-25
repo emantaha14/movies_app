@@ -11,15 +11,26 @@ class MoviesCubit extends Cubit<MoviesState> {
 
   MoviesCubit({required this.getAllMoviesUseCase}) : super(MoviesInitial());
 
-  getAllMovies() async {
+  getAllMovies(String name) async {
     emit(LoadingMoviesState());
     final moviesOrFailure = await getAllMoviesUseCase.call();
     moviesOrFailure.fold(
-          (failure) =>
-          emit(ErrorMoviesState(error: mapFailureToMessage(failure))),
-          (movies) => emit(LoadedMoviesState(movies: movies)),
-    );
+        (failure) =>
+            emit(ErrorMoviesState(error: mapFailureToMessage(failure))),
+        (movies) {
+      if (name.isEmpty) {
+        print('Fetched Movies: ${movies.length}');
+        emit(LoadedMoviesState(movies: movies));
+      } else {
+        final filteredList = movies
+            .where((movie) => movie.title
+                .toString()
+                .toLowerCase()
+                .contains(name.toLowerCase()))
+            .toList();
+        print('Filtered Movies: ${filteredList.length}');
+        emit(LoadedMoviesState(movies: filteredList));
+      }
+    });
   }
-
 }
-
