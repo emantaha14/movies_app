@@ -18,6 +18,7 @@ class MovieDetailsRepositoryImpl implements MovieDetailsRepository {
     if(await networkInfo.isConnected){
       try{
         final movieDetails = await movieDetailRemoteDataSource.getMovieDetails(id);
+        print('movie details fetched ');
         return right(movieDetails);
       }
       on ServerException{

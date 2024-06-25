@@ -20,6 +20,6 @@ class MovieDetailsCubit extends Cubit<MovieDetailsState> {
         (failure) =>
             emit(MovieDetailsErrorState(error: mapFailureToMessage(failure))),
         (moviesDetails) =>
-            MovieDetailsLoadedState(movieDetails: moviesDetails));
+            emit(MovieDetailsLoadedState(movieDetails: moviesDetails)));
   }
 }

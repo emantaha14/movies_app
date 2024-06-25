@@ -39,6 +39,10 @@ dependencies:
   smooth_page_indicator:
   dio:
   pretty_dio_logger:
+  flutter_pannable_rating_bar:
+  get_it:
+  sqflite:
+  cached_network_image:
   youtube_player_flutter:
   webview_flutter:
   flutter_inappwebview: ^6.0.0
@@ -47,6 +51,7 @@ dependencies:
   cupertino_icons: ^1.0.2
 dependency_override:
   webview_flutter_android: ^3.16.1
+
 
 dev_dependencies:
   flutter_test:
